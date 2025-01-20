@@ -3,8 +3,6 @@ import '@root/global.scss';
 import * as Constants from '@common/constants';
 import * as Utilities from '@common/utilities';
 
-// NOTE(jimmylee): This is a kitchen sink of all components.
-// When forking or remixing, you'll likely only need a few.
 import Accordion from '@components/Accordion';
 import ActionBar from '@components/ActionBar';
 import ActionButton from '@components/ActionButton';
@@ -75,8 +73,6 @@ import UpdatingDataTable from '@components/examples/UpdatingDataTable';
 
 export const dynamic = 'force-static';
 
-// NOTE(jimmylee)
-// https://nextjs.org/docs/app/api-reference/functions/generate-metadata
 export async function generateMetadata({ params, searchParams }) {
   const title = Package.name;
   const description = Package.description;
@@ -123,8 +119,6 @@ export async function generateMetadata({ params, searchParams }) {
   };
 }
 
-// NOTE(jimmylee)
-// https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts
 export default async function Page(props) {
   return (
     <DefaultLayout previewPixelSRC="https://intdev-global.s3.us-west-2.amazonaws.com/template-app-icon.png">
@@ -133,50 +127,11 @@ export default async function Page(props) {
       <DefaultActionBar />
       <Grid>
 
-        <Accordion defaultValue={true} title="DASHBOARD RADAR EXAMPLE">
-          The Dashboard Radar Example is a visual homage to Brian Wyvill, the creator of the iconic Nostromo interface in Alien 1979. This example using SRCL components recreates the orbital simulations that brought a sense of realism to the movie’s early scenes.
-          <br />
-          <br /> The original AOS (Alien Orbit Simulator) was inspired by the moment when the Nostromo’s crew awakens to decipher a distress signal, this adapation depicts the kind of graphical representation that could chart complex trajectories around distant planets.
-          <br />
-          <br />
-          <Card>
-            <Row style={{ whiteSpace: 'nowrap', minWidth: '70ch' }}>
-              <DashboardRadar />
-            </Row>
-          </Card>
-          <br />
-        </Accordion>
 
-        <Accordion defaultValue={true} title="MESSAGES">
-          Messages in this library present a modern messaging experience through an MS-DOS–inspired aesthetic. Instead of rounded speech bubbles, messages appear in simple rectangular boxes, evoking a nostalgic, classic PC feel.
+      <Accordion defaultValue={true} title="NAVIGATION BAR">
           <br />
           <br />
-          <Card title="EXAMPLE">
-            <Message>You create the world of the dream, you bring the subject into that dream, and they fill it with their subconscious.</Message>
-            <MessageViewer>How could I ever acquire enough detail to make them think that its reality?</MessageViewer>
-            <Message>Well dreams, they feel real while we're in them, right? It's only when we wake up that we realize how things are actually strange.</Message>
-            <Message>Let me ask you a question, you, you never really remember the beginning of a dream do you? You always wind up right in the middle of what's going on.</Message>
-            <MessageViewer>I guess, yeah.</MessageViewer>
-            <Message>So how did we end up here?</Message>
-          </Card>
-          <br />
-        </Accordion>
-
-        <Accordion defaultValue={true} title="MESSAGES INTERFACE">
-          This example combines the aesthetics of iMessage and IRSSI with a terminal-inspired design. It shows how easy it is to embed a simple web application into your website.
-          <br />
-          <br />
-          <Card title="MESSAGES">
-            <MessagesInterface />
-          </Card>
-          <br />
-        </Accordion>
-
-        <Accordion defaultValue={true} title="NAVIGATION BAR">
-          Navigation bars enable smooth transitions between top-level destinations in an app, using icons and text labels to represent sections.
-          <br />
-          <br />
-          <Card title="EXAMPLE">
+          <Card title="NAV">
             <Navigation
               logo="✶"
               left={
@@ -218,25 +173,41 @@ export default async function Page(props) {
                 <ActionButton>NAVIGATION ITEM B</ActionButton>
               </ModalTrigger>
             </Navigation>
-            <Accordion defaultValue={true} title="KENYA HARA, WHITE">
-              Colors do not exist separately and independently within nature; they are constantly shifting in response to subtle gradations of light. It is language that, magnificently, gives them clear shape.
-            </Accordion>
-            <Accordion defaultValue={true} title="KENYA HARA, WHITE">
-              White can be attained by blending all the colors of the spectrum together, or through the substraction of ink and all other pigments. In short, it is "all colors" and "no color" at the same time.
-            </Accordion>
-            <Accordion defaultValue={true} title="KENYA HARA, WHITE">
-              It is easy to think that beauty resides in the realm of creativity. Yet beauty hardly "appears" from nowhere. Recently, I have come to believe that we "discover" it through the cleaning and polishing we do to preserve things as they are. [...] The beauty of a temple garden rests not in the splendid features that were created by a talented designer; rather, its beauty is uncovered through the continual process of cleaning.
-            </Accordion>
-            <Accordion defaultValue={true} title="KENYA HARA, DESIGNING DESIGN">
-              I used to believe that design was information architecture, and also that this architecture was built in the brain of an information recipient. Recently I've come to think that, although the materials of that architecture's construction are indeed the information brought from the outside by the sensory organs, at the same time some very important building blocks are also the recollected experiences, the memories, awakened by these external stimuli. People imagine the world and interpret it when outside stimuli awaken the mountain of their internally stored memories.
-            </Accordion>
-            <Accordion defaultValue={true} title="KENYA HARA, DESIGNING DESIGN">
-              The human brain likes anything that entails a great amount of information. Its excessive capacity waits eagerly to perceive the world by completely exhausting its great receptive powers. That potential power, though, remains today in a state of extreme constriction and is a source of the information stress we're all under.
-            </Accordion>
           </Card>
           <br />
         </Accordion>
 
+        <Accordion defaultValue={true} title="DASHBOARD RADAR">
+          <Card>
+              <DashboardRadar />
+          </Card>
+          <br />
+        </Accordion>
+
+        <Accordion defaultValue={true} title="MESSAGES INTERFACE">
+          This example combines the aesthetics of iMessage and IRSSI with a terminal-inspired design. It shows how easy it is to embed a simple web application into your website.
+          <br />
+          <br />
+          <Card title="MESSAGES">
+            <MessagesInterface />
+          </Card>
+          <br />
+        </Accordion>
+
+        <Accordion defaultValue={true} title="MESSAGES">
+          Messages in this library present a modern messaging experience through an MS-DOS–inspired aesthetic. Instead of rounded speech bubbles, messages appear in simple rectangular boxes, evoking a nostalgic, classic PC feel.
+          <br />
+          <br />
+          <Card title="EXAMPLE">
+            <Message>You create the world of the dream, you bring the subject into that dream, and they fill it with their subconscious.</Message>
+            <MessageViewer>How could I ever acquire enough detail to make them think that its reality?</MessageViewer>
+            <Message>Well dreams, they feel real while we're in them, right? It's only when we wake up that we realize how things are actually strange.</Message>
+            <Message>Let me ask you a question, you, you never really remember the beginning of a dream do you? You always wind up right in the middle of what's going on.</Message>
+            <MessageViewer>I guess, yeah.</MessageViewer>
+            <Message>So how did we end up here?</Message>
+          </Card>
+          <br />
+        </Accordion>
 
         <Accordion defaultValue={true} title="TREEVIEW">
           Tree Views are hierarchical list structures that allow users to navigate nested information or functionalities, commonly used for parent-child relationships like file directories or menus.
